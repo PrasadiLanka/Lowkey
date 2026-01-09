@@ -2,12 +2,15 @@
 import { expect, test } from '@playwright/test';
 import { login } from '../utils/successLogin.spec';
 
+
+test.use({viewport:{width:1920,height:1080}})
+
 test('form-1 fill', async function ({ page }) {
 
         await login(page);
 
         await page.click('//span[normalize-space()="Video upload"]');
-        await page.fill('//input[@id="title"]', "video-4");
+        await page.fill('//input[@id="title"]', "video-7");
         await page.fill('//textarea[@id="description"]', "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.");
         await page.fill('//input[@id="price"]', "1000");
         await page.click('//input[@placeholder="Add relevant tags"]');
